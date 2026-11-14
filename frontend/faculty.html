@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smart Attendance Tracker | Faculty</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div class="container top"><div><h1>Smart Attendance Tracker</h1><p>Faculty attendance dashboard • Phase 8</p></div><button id="logout" hidden>Log out</button></div></header>
+<main class="container"><p><a href="index.html">← Admin dashboard</a> &nbsp; <a href="student.html">Student dashboard →</a></p><p id="notice" role="status" aria-live="polite"></p>
+<section id="loginCard" class="panel login"><h2>Faculty sign in</h2><form id="loginForm">
+<label>Email<input id="email" type="email" value="faculty@example.com" autocomplete="username" required></label>
+<label>Password<input id="password" type="password" autocomplete="current-password" required></label>
+<button>Sign in</button></form><p class="muted">Local seed demo: faculty@example.com / Faculty123!</p></section>
+<section id="dashboard" hidden>
+<div class="intro"><h2 id="welcome">Faculty Dashboard</h2><p>Select your assigned course, choose a date and mark every enrolled student.</p></div>
+<section class="panel"><div class="sectionHead"><h3>My assigned courses</h3><button id="refresh" class="secondary">Refresh</button></div>
+<label>Course<select id="course" aria-label="Select assigned course"></select></label><label>Attendance date<input id="date" type="date" required></label>
+<p id="rosterStatus" class="muted"></p>
+<div class="tableScroll"><table><thead><tr><th>Student</th><th>Email</th><th>Mark attendance</th></tr></thead><tbody id="roster"></tbody></table></div>
+<p><button id="save" disabled>Save attendance</button> <button class="secondary" id="loadDate">Load saved attendance</button></p>
+</section>
+<section class="panel reportPanel"><div class="sectionHead"><h3>Course attendance summary</h3><button class="secondary" id="report">Refresh report</button></div><p id="printCourse" class="muted"></p><div class="reportActions"><button id="facultyCsv" class="secondary">Download CSV</button><button id="facultyPrint" class="secondary">Print / Save PDF</button></div>
+<div class="tableScroll"><table><thead><tr><th>Student</th><th>Classes</th><th>Present</th><th>Absent</th><th>Attendance %</th></tr></thead><tbody id="reportRows"></tbody></table></div>
+<h4>Recently marked dates</h4><div class="tableScroll"><table><thead><tr><th>Date</th><th>Marked</th><th>Present</th><th>Absent</th></tr></thead><tbody id="dateRows"></tbody></table></div></section>
+</section></main><script src="faculty.js"></script></body></html>

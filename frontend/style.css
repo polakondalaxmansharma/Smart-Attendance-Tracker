@@ -1,0 +1,19 @@
+*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#1c2d43;font:15px/1.5 system-ui,Arial,sans-serif}header{background:#173f75;color:white;padding:19px 0}h1{margin:0;font-size:1.55rem}header p{margin:3px 0 0;color:#cddcf2}.container{max-width:1080px;margin:0 auto;padding:0 20px}.top,.sectionHead{display:flex;align-items:center;justify-content:space-between;gap:15px}main{padding-top:22px;padding-bottom:45px}.panel{background:white;border:1px solid #e0e7f2;border-radius:12px;padding:20px;box-shadow:0 3px 12px #1637650c}.login{max-width:440px;margin:35px auto}.intro h2{margin-bottom:0}.intro p,.muted{color:#64748b}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:18px 0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}.stats article{display:flex;flex-direction:column;gap:4px}.stats b{font-size:2rem;color:#1b4c86}.stats span{color:#64748b}h3{margin-top:0}label{display:block;font-weight:600;margin:12px 0}input,select{display:block;width:100%;margin-top:5px;padding:10px;border:1px solid #bac7d6;border-radius:7px;font:inherit;background:white;color:inherit}input:focus,select:focus,button:focus-visible{outline:3px solid #9bbcf0;outline-offset:2px}button{background:#215b9a;color:white;border:0;border-radius:7px;padding:10px 15px;cursor:pointer;font:inherit;font-weight:600}button:hover{background:#18477b}button.secondary{background:#e8eff9;color:#18477b}button:disabled{opacity:.6;cursor:wait}#logout{background:white;color:#173f75}#notice:not(:empty){padding:12px 14px;border-radius:8px;background:#dceafa;color:#14365e;margin:0 0 16px}#notice.error{background:#fee3e3;color:#8e2222}.tableScroll{overflow-x:auto}table{border-collapse:collapse;width:100%}th,td{padding:11px;border-bottom:1px solid #e5eaf0;text-align:left}th{background:#f7f9fd}td button{padding:7px 11px}#studentsPanel{margin-top:20px;padding:12px;background:#f7f9fd;border-radius:8px}[hidden]{display:none!important}@media(max-width:700px){.cards{grid-template-columns:1fr}.stats{gap:9px}.stats article{padding:12px}.stats b{font-size:1.6rem}.top{align-items:flex-start}}
+/* Phase 5 faculty page additions */
+a{color:#215b9a;font-weight:600}a:hover{text-decoration:none}.reportPanel{margin-top:20px}#roster select{min-width:115px;margin:0}.sectionHead h3{margin:0}@media(max-width:550px){.sectionHead{align-items:start;flex-wrap:wrap}th,td{padding:8px}}
+
+/* Phase 6 — student dashboard */
+.pageNav{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:16px}.studentSection{margin-top:20px}.studentStats{grid-template-columns:repeat(3,minmax(0,1fr))}.statusPresent{color:#117647;font-weight:700}.statusAbsent{color:#a53838;font-weight:700}@media(max-width:550px){.studentStats{grid-template-columns:1fr}.studentStats article{padding:12px}}
+
+/* Phase 7 - report actions and print formatting */
+.reportActions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 16px}
+@media print{
+ @page{size:A4;margin:14mm}
+ body{background:white;color:#111;font-size:11pt}
+ .printFaculty header,.printFaculty main>p,.printFaculty #loginCard,.printFaculty #notice,.printFaculty .intro,.printFaculty #dashboard>section:not(.reportPanel),
+ .printStudent header,.printStudent nav,.printStudent #notice,.printStudent #loginCard,.printStudent .intro,.printStudent .stats{display:none!important}
+ .printFaculty .reportPanel,.printStudent #studentSummaryPanel,.printStudent #studentHistoryPanel{display:block!important;box-shadow:none;border:0;padding:0;margin:0 0 16px}
+ .reportActions,button,select{display:none!important}
+ main{max-width:none;padding:0}.tableScroll{overflow:visible}table{font-size:10pt}tr{break-inside:avoid}td,th{padding:5px;border:1px solid #bbb}
+ .printStudent #studentHistoryPanel label{display:none}
+}
